@@ -40,7 +40,6 @@ public class WordCountProcessor {
 
         wordCounts.toStream()
             .peek((word, count) -> LOGGER.info("word: {} count: {}", word, count))
-            .map((word, count) -> new KeyValue<>(word, count.toString()))
-            .to("word-output-topic", Produced.with(STRING_SERDE, STRING_SERDE));
+            .to("word-output-topic", Produced.with(STRING_SERDE, LONG_SERDE));
     }
 }
