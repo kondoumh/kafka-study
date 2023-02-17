@@ -22,6 +22,8 @@ Receive the message on the consumer.
 $ kafka-console-consumer \
   --bootstrap-server localhost:9092 \
   --topic test-topic \
-  --from-beginning
-{"message_id":1,"title":"hello","body":"world"}
+  --from-beginning \
+  --property print.headers=true
+
+foo:bar,__TypeId__:com.kondoumh.kafkaproducerexample.producer.model.Message	{"message_id":1,"title":"hello","body":"world"}
 ```
