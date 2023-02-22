@@ -23,6 +23,14 @@ public class ExampleConsumer {
             @Header(KafkaHeaders.GROUP_ID) String groupId,
             @Header(KafkaHeaders.OFFSET) Long offset,
             @Header("X-CUSTOM-HEADER") String customHeader) {
-        LOGGER.info("Received: {}, {}, {}, {}, {}, {}", message, key, partition, groupId, offset, customHeader);
+        LOGGER
+                .atInfo()
+                .addArgument(message)
+                .addArgument(key)
+                .addArgument(partition)
+                .addArgument(groupId)
+                .addArgument(offset)
+                .addArgument(customHeader)
+                .log("Received: {}, {}, {}, {}, {}, {}");
     }
 }
