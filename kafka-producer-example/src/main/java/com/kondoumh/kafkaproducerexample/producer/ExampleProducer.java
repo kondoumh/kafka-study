@@ -26,9 +26,9 @@ public class ExampleProducer {
 
   public void produce(String title, String body) {
     var message = new Message(1, title, body);
-    var producerRecord = new ProducerRecord<String, Message>(TOPIC, message);
+    var producerRecord = new ProducerRecord<String, Message>(TOPIC, PARTITION_KEY, message);
     // Add custom header
-    producerRecord.headers().add("foo", "bar".getBytes());
+    producerRecord.headers().add("X-CUSTOM-HEADER", "custom-header-value".getBytes());
     kafkaTemplate.send(producerRecord);
 
     // CompletableFuture<SendResult<String, Message>> future = kafkaTemplate.send(TOPIC, PARTITION_KEY, message);
