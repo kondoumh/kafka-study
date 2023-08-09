@@ -7,3 +7,20 @@ spring:
       properties:
         spring.json.use.type.headers: false
         spring.json.value.default.type: com.kondoumh.kafkaconsumerexample.ExampleEvent
+
+springwolf:
+  enabled: true
+  docket:
+    base-package: com.kondoumh.kafkaconsumerexample
+    info:
+      title: kafka-consumer-example
+      version: 0.1.0
+      description: kafka-consumer-example
+    servers:
+      kafka:
+        protocol: kafka
+        url: localhost:9092
+  plugin:
+    kafka:
+      publishing:
+        enabled: true

@@ -19,15 +19,17 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter'
+  implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.kafka:spring-kafka'
 	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core'
 	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
 	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-annotations'
+	implementation 'io.github.springwolf:springwolf-kafka:0.12.1'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.kafka:spring-kafka-test'
+	runtimeOnly 'io.github.springwolf:springwolf-ui:0.8.0'
 }
 
 tasks.named('test') {
