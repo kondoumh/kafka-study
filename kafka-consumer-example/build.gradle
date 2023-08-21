@@ -24,7 +24,7 @@ dependencies {
 	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core'
 	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
 	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-annotations'
-	implementation 'io.github.springwolf:springwolf-kafka:0.12.1'
+	implementation 'io.github.springwolf:springwolf-kafka:0.13.0'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
